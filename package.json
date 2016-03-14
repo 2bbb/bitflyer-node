@@ -2,12 +2,16 @@
   "name": "bitflyer-node",
   "version": "0.0.1",
   "description": "bitFlyer REST/pubnub wrapper.",
-  "main": "index.js",
+  "main": "./index.js",
+  "homepage": "https://github.com/2bbb/bitflyer-node",
   "directories": {
     "example": "examples"
   },
   "scripts": {
     "example": "node examples/example.js"
+  },
+  "engines": {
+    "node" : ">=4.2.6"
   },
   "keywords": [
     "bitFlyer",
