@@ -1,0 +1,24 @@
+{
+  "name": "bitflyer-node",
+  "version": "0.0.1",
+  "description": "bitFlyer REST/pubnub wrapper.",
+  "main": "index.js",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "example": "node examples/example.js"
+  },
+  "keywords": [
+    "bitFlyer",
+    "bitcoin",
+    "exchange",
+    "trade"
+  ],
+  "author": "ISHII 2bit",
+  "license": "MIT",
+  "dependencies": {
+    "pubnub": "^3.14.3",
+    "request": "^2.69.0"
+  }
+}
