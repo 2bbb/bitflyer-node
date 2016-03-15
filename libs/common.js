@@ -30,7 +30,7 @@ module.exports = {
         actual: "BTC_JPY",
         fx: "FX_BTC_JPY"
     },
-    Status: {
+    ServerStatus: {
         NORMAL: "NORMAL",
         BUSY: "BUSY",
         VERY_BUSY: "VERY BUSY",
