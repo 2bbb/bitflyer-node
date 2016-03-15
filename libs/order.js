@@ -126,7 +126,7 @@ function create_child_order_group(product_code) {
             var res = this.get(paging);
             res.child_order_state = child_order_state;
         },
-        getByParentID: function(parent_order_id, paging) {
+        getByParentOrderID: function(parent_order_id, paging) {
             if(!parent_order_id) {
                 return invalid_argument("parent_order_id", parent_order_id);
             }
@@ -139,6 +139,10 @@ function create_child_order_group(product_code) {
 module.exports = {
     ChildOrder: {
         Actual: create_child_order_group(ProductCode.actual),
-        Fx: create_child_order_group(ProductCode.fx)
-    }
+        Fx: create_child_order_group(ProductCode.fx),
+        Type: ChildOrderType,
+        State: ChildOrderState,
+        Side: Side,
+        TimeInForce: TimeInForce
+    },
 };
