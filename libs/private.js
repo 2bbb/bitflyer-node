@@ -2,32 +2,33 @@ var util = require('util'),
     crypto = require('crypto'),
     request = require('request'),
     public_rest = require('./public'),
-    common = require('./common');
+    common = require('./common'),
+    query = common.query;
 
 var base_url = common.base_url,
     Method = common.Method,
     Pathes = {
         GET: {
-            permissions: '/v1/me/getpermissions',
-            balance: '/v1/me/getbalance',
-            collateral: '/v1/me/getcollateral',
-            addresses: '/v1/me/getaddresses',
-            coin_ins: '/v1/me/getcoinins',
-            coin_outs: '/v1/me/getcoinouts',
-            deposits: '/v1/me/getdeposits',
-            with_drawals: '/v1/me/getwithdrawals',
-            child_orders: '/v1/me/getchildorders',
-            parent_orders: '/v1/me/getparentorders',
-            parent_order: '/v1/me/getparentorder',
-            executions: '/v1/me/getexecutions',
-            positions: '/v1/me/getpositions',
+            permissions: '/me/getpermissions',
+            balance: '/me/getbalance',
+            collateral: '/me/getcollateral',
+            addresses: '/me/getaddresses',
+            coin_ins: '/me/getcoinins',
+            coin_outs: '/me/getcoinouts',
+            deposits: '/me/getdeposits',
+            with_drawals: '/me/getwithdrawals',
+            child_orders: '/me/getchildorders',
+            parent_orders: '/me/getparentorders',
+            parent_order: '/me/getparentorder',
+            executions: '/me/getexecutions',
+            positions: '/me/getpositions' + query({product_code: ProductCode.fx}),
         },
         POST: {
-            send_child_order: '/v1/me/sendchildorder',
-            cancel_child_order: '/v1/me/cancelchildorder',
-            send_parent_order: '/v1/me/sendparentorder',
-            cancel_parent_order: '/v1/me/cancelparentorder',
-            cancel_all_child_orders: '/v1/me/cancelallchildorders',
+            send_child_order: '/me/sendchildorder',
+            cancel_child_order: '/me/cancelchildorder',
+            send_parent_order: '/me/sendparentorder',
+            cancel_parent_order: '/me/cancelparentorder',
+            cancel_all_child_orders: '/me/cancelallchildorders',
         }
     };
 
@@ -100,7 +101,7 @@ function create_get_method_with_no_arguments(key) {
     };
 }
 
-['permissions', 'balance', 'collateral', 'addresses'].forEach(function(key) {
+['permissions', 'balance', 'collateral', 'addresses', 'positions'].forEach(function(key) {
     var method_name = 'get' + common.camelize_mod(key);
     rest_prototype[method_name] = create_get_method_with_no_arguments(key);
 });

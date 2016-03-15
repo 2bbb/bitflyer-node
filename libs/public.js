@@ -3,16 +3,18 @@ var common = require('./common'),
 
 var base_url = common.base_url,
     Method = common.Method,
+    ProductCode = common.ProductCode,
+    query = common.query,
     Pathes = {
         GET: {
-            board: '/v1/getboard?product_code=BTC_JPY',
-            ticker: '/v1/getticker?product_code=BTC_JPY',
-            executions: '/v1/getexecutions?product_code=BTC_JPY',
-            board_fx: '/v1/getboard?product_code=FX_BTC_JPY',
-            ticker_fx: '/v1/getticker?product_code=FX_BTC_JPY',
-            executions_fx: '/v1/getexecutions?product_code=FX_BTC_JPY',
-            health: '/v1/gethealth',
-            chatlog: '/v1/getchats'
+            board: '/getboard' + query({product_code: ProductCode.actual}),
+            ticker: '/getticker' + query({product_code: ProductCode.actual}),
+            executions: '/getexecutions' + query({product_code: ProductCode.actual}),
+            board_fx: '/getboard' + query({product_code: ProductCode.fx}),
+            ticker_fx: '/getticker' + query({product_code: ProductCode.fx}),
+            executions_fx: '/getexecutions' + query({product_code: ProductCode.fx}),
+            health: '/gethealth',
+            chatlog: '/getchats'
         }
     };
 
