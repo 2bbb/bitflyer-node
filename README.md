@@ -133,6 +133,11 @@ streaming.subscribeTicker(function(err, data) {
 
 ## Update history
 
+### 2016/03/15 ver 0.0.3 release
+
+* oops again
+
+
 ### 2016/03/15 ver 0.0.2 release
 
 * oops
