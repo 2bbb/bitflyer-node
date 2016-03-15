@@ -6,6 +6,7 @@ var util = require('util'),
     query = common.query;
 
 var base_url = common.base_url,
+    ProductCode = common.ProductCode,
     Method = common.Method,
     Pathes = {
         GET: {
