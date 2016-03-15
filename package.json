@@ -1,8 +1,12 @@
 {
   "name": "bitflyer-node",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "bitFlyer REST/pubnub wrapper.",
   "main": "./index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/2bbb/bitflyer-node.git"
+  },
   "homepage": "https://github.com/2bbb/bitflyer-node",
   "directories": {
     "example": "examples"
@@ -19,7 +23,11 @@
     "exchange",
     "trade"
   ],
-  "author": "ISHII 2bit",
+  "author": {
+    "name": "ISHII 2bit",
+    "email": "ishii@buffer-renaiss.com",
+    "url": "http://buffer-renaiss.com/"
+  },
   "license": "MIT",
   "dependencies": {
     "pubnub": "^3.14.3",
