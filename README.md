@@ -16,7 +16,7 @@ __this is not implemented trade api yet__
 ### at first
 
 ```
-$ npm install
+$ npm install bitflyer-node
 ```
 
 ### example
