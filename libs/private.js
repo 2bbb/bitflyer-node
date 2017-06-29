@@ -20,7 +20,7 @@ var base_url = common.base_url,
             parent_orders: '/v1/me/getparentorders',
             parent_order: '/v1/me/getparentorder',
             executions: '/v1/me/getexecutions',
-            positions: '/v1/me/getpositions',
+            positions: '/v1/me/getpositions?product_code=FX_BTC_JPY',
         },
         POST: {
             send_child_order: '/v1/me/sendchildorder',
@@ -100,7 +100,7 @@ function create_get_method_with_no_arguments(key) {
     };
 }
 
-['permissions', 'balance', 'collateral', 'addresses'].forEach(function(key) {
+['permissions', 'balance', 'collateral', 'addresses','positions'].forEach(function(key) {
     var method_name = 'get' + common.camelize_mod(key);
     rest_prototype[method_name] = create_get_method_with_no_arguments(key);
 });
